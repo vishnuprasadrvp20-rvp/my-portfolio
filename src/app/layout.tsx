@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/topbar/topBar";
+import CustomCursor from "@/components/cursor/customCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-screen bg-black text-white">
+        <CustomCursor />
 
         {/* Fixed Background */}
         <div className="fixed inset-0 -z-10 pointer-events-none">
