@@ -71,7 +71,7 @@ export default function PersonalPage() {
         </p>
 
         <button onClick={() => router.push('/games')} className="mt-20">
-            <div className="mt-20 rounded-md bg-red-500 px-8 py-4 font-medium text-black transition hover:bg-lime-400">
+            <div className="mt-20 rounded-md bg-red-500 px-8 py-4 font-medium text-black transition hover:bg-red-400">
               Play Games
             </div >
             </button>

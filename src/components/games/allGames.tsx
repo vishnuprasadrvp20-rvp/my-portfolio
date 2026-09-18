@@ -100,7 +100,8 @@ export default function AllGames() {
 
         {/* Two Player */}
         <div className="rounded-2xl border border-white/10 bg-black/40 p-6 backdrop-blur-sm">
-          <div className="mb-6" onClick={() => setSelectedGame("snake-game")}>
+        {/* onClick={() => setSelectedGame("snake-game")} */}
+          <div className="mb-6" >
             <h3 className="text-xl font-semibold text-white">
               👥 Two Player
             </h3>
@@ -110,18 +111,35 @@ export default function AllGames() {
             </p>
           </div>
 
-          <div className="flex min-h-[150px] items-center justify-center rounded-xl border border-dashed border-white/10 bg-white/[0.02]">
-            <div className="text-center">
-              <div className="mb-3 text-3xl">🔒</div>
+          <div className="space-y-4">
 
-              <h4 className="font-medium text-gray-300">
-                Coming Soon
-              </h4>
 
-              <p className="mt-1 text-sm text-gray-600">
-                More games are on the way.
-              </p>
-            </div>
+            {/* Tic Tac Toe */}
+            <button
+             onClick={() => setSelectedGame("snake-game")}
+              className="group flex w-full items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] p-4 text-left transition-all duration-300 hover:border-red-500/50 hover:bg-red-500/10"
+            >
+              <div className="flex items-center gap-4">
+                <span className="flex h-12 w-12 items-center justify-center rounded-lg bg-red-500/10 text-2xl">
+                  🐍
+                </span>
+
+                <div>
+                  <h4 className="font-medium text-white">
+                    Two Snakes
+                  </h4>
+
+                  <p className="mt-1 text-sm text-gray-500">
+                    Challenge yourself against your friend.
+                  </p>
+                </div>
+              </div>
+
+              <span className="text-xl text-gray-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-red-400">
+                →
+              </span>
+            </button>
+
           </div>
         </div>
 

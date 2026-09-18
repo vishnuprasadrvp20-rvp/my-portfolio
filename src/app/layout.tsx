@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import TopBar from "@/components/topbar/topBar";
 import CustomCursor from "@/components/cursor/customCursor";
+import PortfolioChatbot from "@/components/chatBot/chatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -79,6 +80,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="relative mt-20">
           {children}
         </main>
+
+        <PortfolioChatbot />
 
       </body>
     </html>
