@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+
 import TopBar from "@/components/topbar/topBar";
 import CustomCursor from "@/components/cursor/customCursor";
 import PortfolioChatbot from "@/components/chatBot/chatBot";
+import AOSProvider from "@/components/AOSprovider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,20 +19,67 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Vishnu Prasad | Frontend Developer",
-  description: "Portfolio of Vishnu Prasad",
+
+  description:
+    "Portfolio of Vishnu Prasad, a frontend developer specializing in Angular, React, Next.js, Flutter and modern web development.",
+
+  keywords: [
+    "Vishnu Prasad",
+    "Vishnu Prasad frontend developer",
+    "Vishnu Prasad UI developer",
+    "Vishnu Prasad Ravindran",
+    "Vishnu Prasad Ravindran frontend developer",
+    "Vishnu Prasad Ravindran UI developer",
+    "Frontend Developer",
+    "Angular Developer",
+    "React Developer",
+    "Next.js Developer",
+    "UI Developer",
+    "JavaScript Developer",
+  ],
+
+  authors: [
+    {
+      name: "Vishnu Prasad",
+    },
+  ],
+
+  creator: "Vishnu Prasad",
+
+  openGraph: {
+    title: "Vishnu Prasad | Frontend Developer",
+    description:
+      "Frontend developer portfolio showcasing experience, skills, projects and more.",
+    type: "website",
+    locale: "en_US",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: LayoutProps<"/">) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-screen bg-black text-white">
+      <body className="min-h-screen overflow-x-hidden bg-black text-white">
+
+        {/* AOS */}
+        <AOSProvider />
+
+        {/* Custom Cursor */}
         <CustomCursor />
 
-        {/* Fixed Background */}
-        <div className="fixed inset-0 -z-10 pointer-events-none">
+        {/* =========================
+            FIXED BACKGROUND
+        ========================== */}
+        <div className="pointer-events-none fixed inset-0 -z-10">
 
           {/* Red → Black Gradient */}
           <div
@@ -73,14 +122,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 
         </div>
 
-        {/* Fixed Topbar */}
+        {/* =========================
+            TOPBAR
+        ========================== */}
         <TopBar />
 
-        {/* Page Content */}
-        <main className="relative mt-20">
+        {/* =========================
+            PAGE CONTENT
+        ========================== */}
+        <main className="relative mt-20 min-h-screen w-full">
           {children}
         </main>
 
+        {/* =========================
+            GLOBAL CHATBOT
+        ========================== */}
         <PortfolioChatbot />
 
       </body>

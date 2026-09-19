@@ -37,7 +37,7 @@ export default function PortfolioChatbot() {
       return "Hello! 👋 Nice to meet you.";
     }
 
-    if (text.includes("name")) {
+    if (text.includes("name") || text.includes("who are you")) {
       return "I'm Ask Vishnu 🤖, Vishnu's portfolio assistant.";
     }
     if (text.includes("how")) {

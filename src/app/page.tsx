@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-black text-white">
@@ -20,41 +18,56 @@ export default function Home() {
       />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex  max-w-7xl items-center px-8 pt-8" style={{height : "calc(100vh - 80px)"}}>
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-80px)] max-w-7xl items-center px-5 py-12 sm:px-8 md:px-8 md:py-8">
 
-        <div className="grid w-full grid-cols-1 items-center gap-16 md:grid-cols-2">
+        <div className="grid w-full grid-cols-1 items-center gap-14 md:grid-cols-2 md:gap-16">
 
-          {/* Left */}
-          <div>
-            <p className="mb-4 text-sm uppercase tracking-[0.3em] text-gray-400">
+          {/* =========================
+              LEFT CONTENT
+          ========================== */}
+          <div className="text-center md:text-left">
+
+            <p
+              data-aos="fade-up"
+              className="mb-4 text-xs uppercase tracking-[0.25em] text-gray-400 sm:text-sm sm:tracking-[0.3em]"
+            >
               Frontend Developer
             </p>
 
-            <h1 className="text-5xl font-bold leading-tight md:text-7xl">
+            <h1
+              data-aos="fade-up"
+              data-aos-delay="100"
+              className="text-4xl font-bold leading-tight sm:text-5xl md:text-7xl"
+            >
               Hi, I&apos;m
               <br />
+
               <span className="text-gray-300">
                 Vishnu Prasad
               </span>
             </h1>
 
-            <p className="mt-6 max-w-lg text-lg leading-8 text-gray-400">
+            <p
+              data-aos="fade-up"
+              data-aos-delay="200"
+              className="mx-auto mt-5 max-w-lg text-base leading-7 text-gray-400 sm:text-lg sm:leading-8 md:mx-0 md:mt-6"
+            >
               I build modern, responsive and interactive web applications
               using Angular, React and modern frontend technologies.
             </p>
-            {/* <button className="mt-20">
-            <a  href="https://www.linkedin.com/in/vishnu-prasad-ravindran-27854829b/" target="_blank" className="mt-20 rounded-md bg-lime-500 px-8 py-4 font-medium text-black transition hover:bg-lime-400">
-              Let&apos;s work together →
-            </a >
-            </button> */}
 
             {/* Technologies */}
-            <div className="mt-16">
-              <p className="mb-5 text-xs uppercase tracking-widest text-gray-500">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="300"
+              className="mt-10 sm:mt-14 md:mt-16"
+            >
+              <p className="mb-4 text-[10px] uppercase tracking-[0.2em] text-gray-500 sm:text-xs sm:tracking-widest">
                 Technologies I work with
               </p>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-2.5 md:justify-start sm:gap-3">
+
                 {[
                   "Angular",
                   "React",
@@ -64,33 +77,45 @@ export default function Home() {
                 ].map((tech) => (
                   <div
                     key={tech}
-                    className="rounded border border-white/10 bg-white/[0.03] px-5 py-3 text-sm text-gray-400"
+                    className="rounded border border-white/10 bg-white/[0.03] px-3 py-2 text-xs text-gray-400 transition-all duration-300 hover:border-red-500/40 hover:bg-red-500/5 hover:text-gray-200 sm:px-5 sm:py-3 sm:text-sm"
                   >
                     {tech}
                   </div>
                 ))}
+
               </div>
             </div>
+
           </div>
 
-          {/* Right - Profile Image */}
-          <div className="flex justify-center md:justify-end">
+          {/* =========================
+              RIGHT - PROFILE IMAGE
+          ========================== */}
+          <div
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            className="flex justify-center md:justify-end"
+          >
+
             <div className="relative">
 
               {/* Glow */}
               <div className="absolute inset-0 rounded-full bg-red-900/40 blur-3xl" />
 
               <img
-                src="/images/profile.jpg"
+                src="/images/vishnuHomePage.jpg"
                 alt="Vishnu Prasad"
-                className="relative h-72 w-72 rounded-full object-cover grayscale-[20%] md:h-[420px] md:w-[420px]"
+                className="relative h-60 w-60 rounded-full object-cover grayscale-[20%] sm:h-72 sm:w-72 md:h-[420px] md:w-[420px]"
               />
 
             </div>
+
           </div>
 
         </div>
+
       </div>
+
     </section>
   );
 }
